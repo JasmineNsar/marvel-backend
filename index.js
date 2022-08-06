@@ -32,7 +32,7 @@ app.get("/comics", async (req, res) => {
   try {
     const response = await axios.get(
       // ajout de la key name via un query lié a l'input SearchBar
-      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}&name=${req.query.title}`
+      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}&title=${req.query.title}`
     );
     res.json(response.data);
   } catch (error) {

@@ -38,17 +38,17 @@ app.get("/comics", async (req, res) => {
   }
 });
 
-app.get("/character/:id", async (req, res) => {
-  try {
-    const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/character/${req.params.id}?apiKey=${process.env.API_KEY}`
-    );
-    // console.log(response.data);
-    res.json(response.data);
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+// app.get("/character/:id", async (req, res) => {
+//   try {
+//     const response = await axios.get(
+//       `https://lereacteur-marvel-api.herokuapp.com/character/${req.params.id}?apiKey=${process.env.API_KEY}`
+//     );
+//     // console.log(response.data);
+//     res.json(response.data);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// });
 
 app.get("/comics/:id", async (req, res) => {
   try {

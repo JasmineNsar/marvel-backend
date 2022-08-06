@@ -31,7 +31,8 @@ app.get("/characters", async (req, res) => {
 app.get("/comics", async (req, res) => {
   try {
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}`
+      // ajout de la key name via un query lié a l'input SearchBar
+      `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.API_KEY}&name=${req.query.name}`
     );
     res.json(response.data);
   } catch (error) {
